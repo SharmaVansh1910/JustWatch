@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Player</title>
+    <link rel="stylesheet" href="movie-player.css" />
+  </head>
+  <body class="bg-black text-white">
+    <!-- Movie Player Container -->
+    <div class="movie-player-container">
+      <div class="movie-background">
+        <!-- Video or background image for the movie -->
+        <img
+          src="https://image.tmdb.org/t/p/w500/qw0T3YopG7h8gq0pCJgiHzcWVR7.jpg"
+          alt="Movie Background"
+          class="movie-bg-img"
+        />
+      </div>
+
+      <div class="movie-info">
+        <h1 class="movie-title">Movie Title Goes Here</h1>
+        <p class="movie-description">
+          This is a brief description of the movie. The movie is about an epic
+          adventure that spans across multiple worlds.
+        </p>
+        <button class="play-button" id="playButton">Play</button>
+      </div>
+    </div>
+
+    <!-- Video player hidden initially -->
+    <div class="video-player" id="videoPlayer">
+      <video class="video-element" controls>
+        <source src="file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <script>
+      const playButton = document.getElementById("playButton");
+      const videoPlayer = document.getElementById("videoPlayer");
+      const movieBackground = document.querySelector(".movie-background");
+
+      playButton.addEventListener("click", () => {
+        videoPlayer.style.display = "block";
+        movieBackground.style.display = "none"; // Hide background once movie starts
+        videoPlayer.querySelector("video").play();
+      });
+    </script>
+  </body>
+</html>

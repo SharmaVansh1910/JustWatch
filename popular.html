@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body class="bg-black text-white">
+    <div class="whole-body w-80vw justify-center mx-4">
+      <!-- Navbar (unchanged) -->
+      <nav>
+        <div class="Navbar flex bg-black p-3 gap-5">
+          <div class="flex items-center justify-center">
+            <img
+              src="https://www.justwatch.com/appassets/img/logo/JustWatch-logo-small.webp"
+              alt="JustWatch Logo"
+              style="mix-blend-mode: screen"
+              class="h-auto w-28"
+            />
+          </div>
+          <div class="flex gap-10 m-3">
+            <div class="home hover:text-yellow-400 focus:text-yellow-400">
+              <a href="index.html">Home</a>
+            </div>
+            <div class="new hover:text-yellow-400 focus:text-yellow-400">
+              New
+            </div>
+            <div class="popular hover:text-yellow-400 focus:text-yellow-400">
+              Popular
+            </div>
+            <!-- <div class="list hover:text-yellow-400 focus:text-yellow-400">
+              List
+            </div> -->
+            <div class="sports hover:text-yellow-400 focus:text-yellow-400">
+              <a href="sport.html">Sports</a>
+            </div>
+            <div class="guide hover:text-yellow-400 focus:text-yellow-400">
+              <a href="guide.html">Guide</a>
+            </div>
+          </div>
+          <div
+            class="relative w-[700px] mx-auto rounded-2xl border border-gray-900"
+          >
+            <input
+              type="text"
+              placeholder="Search for Movies or TV Shows"
+              class="w-full pl-12 pr-4 py-2"
+            />
+            <div
+              class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+            >
+              <svg
+                class="w-5 h-5 text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <button
+            class="bg-gray-900 text-white px-4 rounded-md text-[16px] hover:bg-yellow-400 hover:text-black transition"
+          >
+            <a href="sign-in.html">Sign In</a>
+          </button>
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fas"
+            data-icon="bars"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            class="svg-inline--fa fa-bars"
+            style="
+              width: 15px;
+              font-size: 16px;
+              margin: 0px;
+              margin-inline-start: 3px;
+            "
+          >
+            <path
+              fill="currentColor"
+              d="M0 96C0 78.3 14.3 64 32 64h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32z"
+            ></path>
+          </svg>
+        </div>
+      </nav>
+
+      <!-- Page title and dropdown -->
+      <div class="flex justify-between m-2 mt-6">
+        <div class="text-2xl">
+          Popular Movies and TV Shows – JustWatch India
+        </div>
+
+        <div class="relative inline-block text-left">
+          <button
+            id="dropdownButton"
+            onclick="hideShow()"
+            class="flex items-center px-3 py-2 rounded-lg transition-all"
+          >
+            <svg
+              id="arrowIcon"
+              class="w-5 h-5 text-black transition-transform duration-300"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="chevron-down"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="svg-inline--fa fa-chevron-down"
+            >
+              <path
+                fill="currentColor"
+                d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                class=""
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Welcome message -->
+      <div class="mt-4 p-3">
+        We’re glad you’re here! With JustWatch, you can easily find where to
+        stream your favorite movies and TV series in India.
+      </div>
+
+      <!-- Toggle content -->
+      <div id="main" class="text-white hidden p-3">
+        JustWatch is simple and effective—choose your preferred streaming
+        services in the WatchBar below and see what’s available on Netflix,
+        Amazon Prime Video India, Hotstar, and more.
+        <br /><br />
+        This guide is organized by popularity to help you discover today's
+        most-watched movies and TV shows in India. To find titles that match
+        your taste, you can filter results by release year, age rating, genre,
+        price, and more. We also provide an overview of what’s new on streaming
+        services and a guide to upcoming movies and TV shows.
+      </div>
+
+      <div class="flex gap-6 p-4 w-auto h-20 items-center rounded-2xl">
+        <!-- Netflix -->
+        <div class="border p-3 rounded-2xl transition duration-300">
+          <img
+            src="https://images.justwatch.com/icon/207360008/s100/netflix.avif"
+            alt="Netflix"
+            class="h-12 w-12 rounded-xl"
+          />
+        </div>
+
+        <!-- Prime Video -->
+        <div class="border p-3 rounded-2xl transition duration-300">
+          <img
+            src="https://images.justwatch.com/icon/322992749/s100/amazonprimevideo.avif"
+            alt="Prime Video"
+            class="h-12 w-12 rounded-xl"
+          />
+        </div>
+
+        <!-- Apple TV+ -->
+        <div class="border p-3 rounded-2xl transition duration-300">
+          <img
+            src="https://images.justwatch.com/icon/152862153/s100/appletvplus.avif"
+            alt="Apple TV+"
+            class="h-12 w-12 object-contain rounded-2xl"
+          />
+        </div>
+
+        <!-- Plus Button -->
+        <div
+          class="border p-3 rounded-2xl transition duration-300 cursor-pointer"
+          onclick="toggleModal()"
+        >
+          <img
+            src="https://www.justwatch.com/appassets/img/plus_icon.png"
+            alt="Apple TV+"
+            class="h-12 w-12 rounded-2xl"
+          />
+        </div>
+
+        <!-- Modal Overlay -->
+        <div
+          id="customModal"
+          class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50"
+        >
+          <!-- Modal Box -->
+          <div
+            class="bg-white text-black p-6 rounded-2xl w-[90%] max-w-md shadow-2xl relative"
+          >
+            <!-- Close Button (top-right) -->
+            <button
+              onclick="toggleModal()"
+              class="absolute top-3 right-3 text-xl text-gray-600 hover:text-black"
+            >
+              &times;
+            </button>
+
+            <!-- Your Custom Content -->
+            <h2 class="text-xl font-semibold mb-4">Custom Popup Box</h2>
+            <p class="mb-4">
+              Design this area as you wish. Add inputs, info, anything!
+            </p>
+            <button
+              onclick="toggleModal()"
+              class="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="whole-line flex gap-5 m-4 p-4">
+        <div class="bigger flex gap-5 text-2xl mt-1">
+          <div class="All hover:text-yellow-400 focus:text-yellow-400">All</div>
+          <div class="Movies hover:text-yellow-400 focus:text-yellow-400">
+            Movies
+          </div>
+          <div class="Tv hover:text-yellow-400 focus:text-yellow-400">
+            TV Shows
+          </div>
+        </div>
+        <div class="filter flex gap-3 text-lg items-center">
+          <div class="imagee">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M3.9 54.9C10.5 40.9 24.5 32 40 32h432c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 
+                             12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6v-79.1L9 97.3c-9.7-11.9-11.8-28.5-5.1-42.4z"
+              />
+            </svg>
+          </div>
+          <div class="text-white flex" style="gap: 5px; margin-top: 2px">
+            <div>
+              <svg
+                style="margin-top: 5px"
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="filter"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                class="w-5 h-5 text-gray-600"
+              >
+                <path
+                  fill="currentColor"
+                  d="M3.9 54.9C10.5 40.9 24.5 32 40 32l432 0c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9 320 448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6l0-79.1L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z"
+                />
+              </svg>
+            </div>
+
+            <div>FILTERS</div>
+          </div>
+        </div>
+        <div class="varieties flex gap-5 text-lg mt-1">
+          <div class="relaese flex" style="gap: 4px">
+            Release Year
+            <button
+              onclick="Arrow()"
+              class="flex items-center px-3 py-2 rounded-lg transition-all"
+            >
+              <svg
+                id="arrowIco"
+                class="w-5 h-5 text-black transition-transform duration-300"
+                style="margin-top: -5px"
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="chevron-down"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                class="svg-inline--fa fa-chevron-down"
+              >
+                <path
+                  fill="currentColor"
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                  class=""
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="Genres flex" style="gap: 4px">
+            Genres
+            <button
+              onclick="Arrow()"
+              class="flex items-center -mt-4 rounded-lg transition-all"
+            >
+              <svg
+                id="arrowIco"
+                class="w-5 h-5 text-black transition-transform duration-300"
+                style="margin-top: -5px"
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="chevron-down"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                class="svg-inline--fa fa-chevron-down"
+              >
+                <path
+                  fill="currentColor"
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                  class=""
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="price flex" style="gap: 4px">
+            Price
+            <button
+              onclick="Arrow()"
+              class="flex items-center px-3 py-2 rounded-lg transition-all"
+            >
+              <svg
+                id="arrowIco"
+                class="w-5 h-5 text-black transition-transform duration-300"
+                style="margin-top: -5px"
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="chevron-down"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                class="svg-inline--fa fa-chevron-down"
+              >
+                <path
+                  fill="currentColor"
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                  class=""
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="rating flex" style="gap: 4px">
+            Rating
+            <button
+              onclick="Arrow()"
+              class="flex items-center px-3 py-2 rounded-lg transition-all"
+            >
+              <svg
+                id="arrowIco"
+                class="w-5 h-5 text-black transition-transform duration-300"
+                style="margin-top: -5px"
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="chevron-down"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                class="svg-inline--fa fa-chevron-down"
+              >
+                <path
+                  fill="currentColor"
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                  class=""
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="age-rating flex" style="gap: 4px">
+            Age Rating
+            <button
+              onclick="Arrow()"
+              class="flex items-center px-3 py-2 rounded-lg transition-all"
+            >
+              <svg
+                id="arrowIco"
+                class="w-5 h-5 text-black transition-transform duration-300"
+                style="margin-top: -5px"
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="chevron-down"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                class="svg-inline--fa fa-chevron-down"
+              >
+                <path
+                  fill="currentColor"
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                  class=""
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section
+        style="
+          display: grid;
+          grid-template-columns: repeat(7, 1fr); /* 7 columns */
+          gap: 10px;
+          margin: 24px;
+        "
+      >
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+        <div class="bg-red-500">
+          <img
+            class="rounded-lg"
+            src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif"
+            alt=""
+          />
+        </div>
+      </section>
+    </div>
+
+    <!-- Toggle Script -->
+    <!-- <script>
+      function hideShow() {
+        const main = document.getElementById("main");
+        const arrow = document.getElementById("arrowIcon");
+        main.classList.toggle("hidden");
+        arrow.classList.toggle("rotate-180");
+      }
+      function Arrow() {
+        const arrow = document.getElementById("arrowIco");
+        arrow.classList.toggle("rotate-180");
+      }
+      function toggleModal() {
+        const modal = document.getElementById("customModal");
+        modal.classList.toggle("hidden");
+      }
+    </script> -->
+
+    <script>
+      function hideShow() {
+        const main = document.getElementById("main");
+        const icon = document.getElementById("arrowIcon");
+        main.classList.toggle("hidden");
+        icon.classList.toggle("rotate-180");
+      }
+
+      function toggleModal() {
+        const modal = document.getElementById("customModal");
+        modal.classList.toggle("hidden");
+      }
+
+      // Hide modal on page load
+      window.onload = () => {
+        document.getElementById("customModal").classList.add("hidden");
+      };
+    </script>
+  </body>
+</html>

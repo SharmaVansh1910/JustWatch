@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JustWatch Home</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+
+</head>
+
+<body class="bg-black text-white">
+
+    <!-- Main Container -->
+    <div class="w-full max-w-[100vw] justify-center items-center m-auto px-4">
+
+        <!-- Navbar -->
+        <nav class="flex bg-black p-3 gap-5 items-center">
+            <!-- Logo -->
+            <div>
+                <img src="https://www.justwatch.com/appassets/img/logo/JustWatch-logo-small.webp" alt="JustWatch Logo"
+                    class="h-auto w-28 mix-blend-screen" />
+            </div>
+
+            <!-- Nav Links -->
+            <div class="flex gap-10 m-3">
+                <div class="hover:text-yellow-400 cursor-pointer">
+                    <a href="index.html">Home</a></div>
+                <div class="hover:text-yellow-400 cursor-pointer">New</div>
+                <div class="hover:text-yellow-400 cursor-pointer">
+                    <a href="popular.html">Popular</a></div>
+                <!-- <div class="hover:text-yellow-400 cursor-pointer">List</div> -->
+                <div class="hover:text-yellow-400 cursor-pointer">
+                    <a href="sport.html">Sports</a></div>
+                <div class="hover:text-yellow-400 cursor-pointer">
+                    <a href="guide.html">Guide</a></div>
+            </div>
+
+            <!-- Search -->
+            <div class="relative w-[700px] mx-auto rounded-2xl border border-gray-900">
+                <input type="text" placeholder="Search for Movies or TV Shows"
+                    class="w-full pl-12 pr-4 py-2 bg-black text-white placeholder-gray-500 outline-none" />
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Sign In -->
+            <button
+                class="bg-gray-900 text-white px-4 rounded-md text-[16px] hover:bg-yellow-400 hover:text-black transition">
+                <a href="sign-in.html">Sign In</a>
+                
+            </button>
+
+            <!-- Menu Icon -->
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-5 ml-2">
+                <path fill="currentColor"
+                    d="M0 96C0 78.3 14.3 64 32 64h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32z">
+                </path>
+            </svg>
+        </nav>
+
+        <!-- Discover + Date Box -->
+        <div class="flex justify-between ">
+            <div class="flex items-center gap-6 mt-10 px-2">
+                <div class="text-3xl font-bold">Discover Daily</div>
+                <div id="dateBox" class="bg-white rounded-2xl  text-center w-20 h-20">
+                    <div id="month1" class="text-lg text-white bg-red-900 font-bold">--</div>
+                    <div id="date1" class="text-4xl font-bold text-blue-600">--</div>
+
+                </div>
+            </div>
+            <div class="my-10 mx-5"><button class="bg-gray-900 text-lg p-4 rounded-2xl ">
+              <a href="movie-player.html">Choose OTT</a></button></div>
+        </div>
+
+    </div>
+
+
+    <br><br>
+    <div class="flex overflow-x-auto w-full justify-center items-center ">
+
+        <div class="flex gap-6 mx-6">
+            <!-- Card 1 -->
+            <div class="relative bg-[#161b22] rounded-xl overflow-hidden w-[400px] shadow-lg mx-6 ">
+                <!-- Badge -->
+                <div
+                    class="absolute top-0 right-0 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-bl-xl z-10">
+                    Going viral
+                </div>
+
+                <!-- Content -->
+                <div class="flex">
+                    <img src="https://images.justwatch.com/poster/329426599/s166/season-7.avif" alt="Black Mirror"
+                        class="w-[100px] h-full object-cover" />
+
+                    <div class="p-4">
+                        <div class="text-sm text-gray-400 mb-1">2025 · 1h 1min</div>
+                        <div class="text-xl font-bold">Black Mirror</div>
+                        <div class="text-gray-400 text-sm mb-3">(Season 7)</div>
+                        <button
+                        class="mt-3 flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-red-600 group transition duration-300">
+                      
+                        <div class="p-1 rounded group-hover:bg-black transition duration-300">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                               class="h-4" />
+                        </div>
+                      
+                        Watch now
+                      </button>
+                      
+                    </div>
+                </div>
+
+                <!-- Fire bar -->
+                <div class="h-[5px] bg-gradient-to-r from-yellow-400 via-red-500 to-transparent w-full"></div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="relative bg-[#161b22] rounded-xl overflow-hidden w-[400px] shadow-lg">
+                <div class="flex">
+                    <img src="https://images.justwatch.com/poster/301693502/s166/season-1.avif" alt="Moonrise"
+                        class="w-[100px] h-full object-cover" />
+                    <!-- Badge -->
+                    <div
+                        class="absolute top-0 right-0 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-bl-xl z-10">
+                        Going viral
+                    </div>
+
+                    <div class="p-4">
+                        <div class="text-sm text-gray-400 mb-1">2025 · 26min</div>
+                        <div class="text-xl font-bold">Moonrise</div>
+                        <div class="text-gray-400 text-sm mb-3">(Season 1)</div>
+
+                        <button
+                        class="mt-3 flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-red-600 group transition duration-300">
+                      
+                        <div class="p-1 rounded group-hover:bg-black transition duration-300">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                               class="h-4" />
+                        </div>
+                      
+                        Watch now
+                      </button>
+                      
+                    </div>
+                </div>
+
+                <div class="h-[5px] bottom-0 bg-gradient-to-r from-yellow-400 via-red-500 to-transparent w-full"></div>
+            </div>
+        </div>
+
+        <div class="mx-6">
+
+            <!-- Card 3 -->
+            <div class="relative bg-[#161b22] rounded-xl overflow-hidden w-[400px] shadow-lg " style="height: 160px;">
+                <div
+                    class="absolute top-0 right-0 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-bl-xl z-10">
+                    New today
+                </div>
+                <div class="flex">
+                    <img src="https://images.justwatch.com/poster/263543748/s166/season-1.avif" alt="Knowing Bros"
+                        class="w-[100px] h-full object-cover" />
+
+                    <div class="p-4">
+                        <div class="text-sm text-gray-400 mb-1">2015 · 1h 30min</div>
+                        <div class="text-xl font-bold">Knowing Bros</div>
+                        <div class="text-gray-400 text-sm">(Season 1)</div>
+
+                        <!-- IMDb tag -->
+                        <!-- <div class="flex items-center text-sm bg-gray-800 text-yellow-400 px-2 py-1 mt-2 rounded w-max">
+                            <span class="font-bold mr-1">IMDb</span>
+                            Highly rated (8.1)
+                        </div> -->
+
+                        <!-- Button -->
+                        <button
+                        class="mt-3 flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-red-600 group transition duration-300">
+                      
+                        <div class="p-1 rounded group-hover:bg-black transition duration-300">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                               class="h-4" />
+                        </div>
+                      
+                        Watch now
+                      </button>
+                      
+                        
+                    </div>
+                </div>
+                <div class="h-[5px] bg-gradient-to-r from-yellow-400 via-red-500 to-transparent w-full"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <div class="flex overflow-x-auto w-full justify-center items-center ">
+
+        <div class="flex gap-6 mx-6">
+            <!-- Card 1 -->
+            <div class="relative bg-[#161b22] rounded-xl overflow-hidden w-[400px] shadow-lg mx-6 ">
+                <!-- Badge -->
+                <div
+                    class="absolute top-0 right-0 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-bl-xl z-10">
+                    Going viral
+                </div>
+
+                <!-- Content -->
+                <div class="flex">
+                    <img src="https://images.justwatch.com/poster/329436694/s166/season-1.avif" alt="Black Mirror"
+                        class="w-[100px] h-full object-cover" />
+
+                    <div class="p-4">
+                        <div class="text-sm text-gray-400 mb-1">2025 · 1h 1min</div>
+                        <div class="text-xl font-bold">Your Friends and Neighbour</div>
+                        <div class="text-gray-400 text-sm mb-3">(Season 7)</div>
+
+                        <button
+                        class="mt-3 flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-red-600 group transition duration-300">
+                      
+                        <div class="p-1 rounded group-hover:bg-black transition duration-300">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                               class="h-4" />
+                        </div>
+                      
+                        Watch now
+                      </button>
+                      
+                    </div>
+                </div>
+
+                <!-- Fire bar -->
+                <div class="h-[5px] bg-gradient-to-r from-yellow-400 via-red-500 to-transparent w-full"></div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="relative bg-[#161b22] rounded-xl overflow-hidden w-[400px] shadow-lg">
+                <div class="flex">
+                    <img src="https://images.justwatch.com/poster/253840190/s166/ka-pae-ranasingam.avif" alt="Moonrise"
+                        class="w-[100px] h-full object-cover" />
+                    <!-- Badge -->
+                    <div
+                        class="absolute top-0 right-0 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-bl-xl z-10">
+                        Going viral
+                    </div>
+
+                    <div class="p-4">
+                        <div class="text-sm text-gray-400 mb-1">2025 · 1hr 26min</div>
+                        <div class="text-xl font-bold">Ka Pae Ranasingham</div>
+                        <div class="text-gray-400 text-sm mb-3">(Season 1)</div>
+
+                        <button
+                        class="mt-3 flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-red-600 group transition duration-300">
+                      
+                        <div class="p-1 rounded group-hover:bg-black transition duration-300">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                               class="h-4" />
+                        </div>
+                      
+                        Watch now
+                      </button>
+                      
+                    </div>
+                </div>
+
+                <div class="h-[5px] bottom-0 bg-gradient-to-r from-yellow-400 via-red-500 to-transparent w-full"></div>
+            </div>
+        </div>
+
+        <div class="mx-6">
+
+            <!-- Card 3 -->
+            <div class="relative bg-[#161b22] rounded-xl overflow-hidden w-[400px] shadow-lg " style="height: 160px;">
+                <div
+                    class="absolute top-0 right-0 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-bl-xl z-10">
+                    New today
+                </div>
+                <div class="flex">
+                    <img src="https://images.justwatch.com/poster/20418206/s166/simran.avif" alt="Knowing Bros"
+                        class="w-[100px] h-full object-cover" />
+
+                    <div class="p-4">
+                        <div class="text-sm text-gray-400 mb-1">2015 · 1h 03min</div>
+                        <div class="text-xl font-bold">Simran</div>
+                        <div class="text-gray-400 text-sm">(Season 1)</div>
+
+                        <!-- IMDb tag -->
+                        <!-- <div class="flex items-center text-sm bg-gray-800 text-yellow-400 px-2 py-1 mt-2 rounded w-max">
+                            <span class="font-bold mr-1">IMDb</span>
+                            Highly rated (8.1)
+                        </div> -->
+
+                        <!-- Button -->
+                        <button
+                        class="mt-3 flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-red-600 group transition duration-300">
+                      
+                        <div class="p-1 rounded group-hover:bg-black transition duration-300">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                               class="h-4" />
+                        </div>
+                      
+                        Watch now
+                      </button>
+                      
+                        
+                    </div>
+                </div>
+                <div class="h-[5px] bg-gradient-to-r from-yellow-400 via-red-500 to-transparent w-full"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <div class="flex overflow-x-auto w-full justify-center items-center ">
+
+        <div class="flex gap-6 mx-6">
+            <!-- Card 1 -->
+            <div class="relative bg-[#161b22] rounded-xl overflow-hidden w-[400px] shadow-lg mx-6 ">
+                <!-- Badge -->
+                <div
+                    class="absolute top-0 right-0 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-bl-xl z-10">
+                    Going viral
+                </div>
+
+                <!-- Content -->
+                <div class="flex">
+                    <img src="https://images.justwatch.com/poster/326314658/s166/adolescence-2025.avif" alt="Black Mirror"
+                        class="w-[100px] h-full object-cover" />
+
+                    <div class="p-4">
+                        <div class="text-sm text-gray-400 mb-1">2025 · 1h 1min</div>
+                        <div class="text-xl font-bold">Adolescence</div>
+                        <div class="text-gray-400 text-sm mb-3">(Season 7)</div>
+
+                        <button
+                        class="mt-3 flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-red-600 group transition duration-300">
+                      
+                        <div class="p-1 rounded group-hover:bg-black transition duration-300">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                               class="h-4" />
+                        </div>
+                      
+                        Watch now
+                      </button>
+                      
+                    </div>
+                </div>
+
+                <!-- Fire bar -->
+                <div class="h-[5px] bg-gradient-to-r from-yellow-400 via-red-500 to-transparent w-full"></div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="relative bg-[#161b22] rounded-xl overflow-hidden w-[400px] shadow-lg">
+                <div class="flex">
+                    <img src="https://images.justwatch.com/poster/133862323/s166/no-way-out.avif" alt="Moonrise"
+                        class="w-[100px] h-full object-cover" />
+                    <!-- Badge -->
+                    <div
+                        class="absolute top-0 right-0 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-bl-xl z-10">
+                        Going viral
+                    </div>
+
+                    <div class="p-4">
+                        <div class="text-sm text-gray-400 mb-1">2025 · 1hr 26min</div>
+                        <div class="text-xl font-bold">No way out</div>
+                        <div class="text-gray-400 text-sm mb-3">(Season 1)</div>
+
+                        <button
+                        class="mt-3 flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-red-600 group transition duration-300">
+                      
+                        <div class="p-1 rounded group-hover:bg-black transition duration-300">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                               class="h-4" />
+                        </div>
+                      
+                        Watch now
+                      </button>
+                      
+                    </div>
+                </div>
+
+                <div class="h-[5px] bottom-0 bg-gradient-to-r from-yellow-400 via-red-500 to-transparent w-full"></div>
+            </div>
+        </div>
+
+        <div class="mx-6">
+
+            <!-- Card 3 -->
+            <div class="relative bg-[#161b22] rounded-xl overflow-hidden w-[400px] shadow-lg " style="height: 160px;">
+                <div
+                    class="absolute top-0 right-0 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-bl-xl z-10">
+                    New today
+                </div>
+                <div class="flex">
+                    <img src="http://images.justwatch.com/poster/312503375/s166/mr-and-mrs-smith.avif" alt="Knowing Bros"
+                        class="w-[100px] h-full object-cover" />
+
+                    <div class="p-4">
+                        <div class="text-sm text-gray-400 mb-1">2015 · 1h 30min</div>
+                        <div class="text-xl font-bold">Mr. & Mrs. Smith</div>
+                        <div class="text-gray-400 text-sm">(Season 1)</div>
+
+                        <!-- IMDb tag -->
+                        <!-- <div class="flex items-center text-sm bg-gray-800 text-yellow-400 px-2 py-1 mt-2 rounded w-max">
+                            <span class="font-bold mr-1">IMDb</span>
+                            Highly rated (8.1)
+                        </div> -->
+
+                        <!-- Button -->
+                        <!-- <button
+                            class="mt-3 flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                                class="h-4 group-hover:bg-black" id="netflix-logo" />
+                            Watch now
+                        </button> -->
+
+                        <button
+  class="mt-3 flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-red-600 group transition duration-300">
+
+  <div class="p-1 rounded group-hover:bg-black transition duration-300">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+         class="h-4" />
+  </div>
+
+  Watch now
+</button>
+
+                        
+                    </div>
+                </div>
+                <div class="h-[5px] bg-gradient-to-r from-yellow-400 via-red-500 to-transparent w-full"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <div class="flex justify-center items-center mx-auto">
+        <a href="index.html">
+          <button class="bg-gray-900 hover:bg-amber-300 text-white text-lg p-4 rounded-2xl transition duration-300">
+            Tap For More
+          </button>
+        </a>
+    </div>
+      
+      
+      
+      
+
+    <br><br>
+    <div class=" m-8">
+        <div class="text-2xl font-bold mb-2 text-white">
+          Top 10 movies this week
+        </div>
+        <p class="text-gray-400 mb-4">
+          Check out this week's most popular movies and find out where to watch
+          them.
+        </p>
+
+        <div class="flex space-x-6 overflow-x-auto pb-4">
+          <!-- Movie Cards -->
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >1</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/yF1eOkaYvwiORauRCPWznV9xVvi.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >2</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >3</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/jFK2ZLQUzo9pea0jfMCHDfvWsx7.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >4</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/qhb1qOilapbapxWQn9jtRCMwXJF.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >5</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/qGz5rffXhegQH5PGUDiObqoOt06.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >6</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/vBZ0qvaRxqEhZwl6LWmruJqWE8Z.jpg"
+              class="rounded-lg relative z-10"
+            />
+            <!-- </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >7</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/9gb1eFyG1gmsCw1jLx3yCE4rVJg.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >8</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/zjHFv9Ip5A8XcK6RRiR0HFnb6M9.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >9</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/3wRxzLaAsV5S2Z0qhvRf1cIzCz7.jpg"
+              class="rounded-lg relative z-10"
+            /> -->
+          </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >10</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/27Mj3rFYP3xqFy7lnz17vEd8Ms.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- TV Shows -->
+      <div class="m-8">
+        <div class="text-2xl font-bold mb-2 text-white">
+          Top 10 TV shows this week
+        </div>
+        <p class="text-gray-400 mb-4">
+          Explore this week's most popular TV shows and find out where to stream
+          them.
+        </p>
+
+        <div class="flex space-x-6 overflow-x-auto pb-4">
+          <!-- TV Show Cards -->
+          <!-- <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >1</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/6T8fEl9JJybR9UXHfz0F5LQhPnf.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >2</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/uqUeAvjvpiqT5BFpFqgRh7sOiRA.jpg"
+              class="rounded-lg relative z-10"
+            /> -->
+          <!-- </div> -->
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >3</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <!-- <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >4</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/4lw7z39DgGn9RmujuwRDcLfko22.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >5</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/yNiTtuV94JiqdUyf2ls6x3uWAZC.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >6</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/jTngMyDKe6xYtUZeBNN0nMbDKby.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div> -->
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >7</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/hu40Uxp9WtpL34jv3zyWLb5zEVY.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <!-- <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >8</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/rPbT5CCFh3Krkcns75AEvVRF74A.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div> -->
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >9</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/ldfCF9RhR40mppkzmftxapaHeTo.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+          <div class="relative min-w-[180px]">
+            <span
+              class="absolute text-[120px] text-gray-800 font-extrabold -top-6 -left-4 z-0 select-none"
+              >10</span
+            >
+            <img
+              src="https://image.tmdb.org/t/p/w500/vBZ0qvaRxqEhZwl6LWmruJqWE8Z.jpg"
+              class="rounded-lg relative z-10"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-black text-white py-10">
+      <h3 class="text-center text-lg font-semibold mb-6">
+        JustWatch is available in
+      </h3>
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center sm:text-left"
+      >
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">
+            North America
+          </h4>
+          <p class="text-gray-400 text-sm">
+            Bermuda<br />Canada<br />Mexico<br />United States
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">
+            South America
+          </h4>
+          <p class="text-gray-400 text-sm">
+            Argentina<br />Brazil<br />Chile<br />Colombia<br />Ecuador
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">Europe</h4>
+          <p class="text-gray-400 text-sm">
+            France<br />Germany<br />Italy<br />Spain<br />United Kingdom
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">Asia</h4>
+          <p class="text-gray-400 text-sm">
+            India<br />Japan<br />Pakistan<br />Singapore<br />South Korea
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">Africa</h4>
+          <p class="text-gray-400 text-sm">
+            Algeria<br />Kenya<br />South Africa<br />Tunisia<br />Morocco
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">Pacific</h4>
+          <p class="text-gray-400 text-sm">
+            Australia<br />New Zealand<br />Fiji<br />Papua New Guinea
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">Middle East</h4>
+          <p class="text-gray-400 text-sm">
+            Egypt<br />Israel<br />Saudi Arabia<br />United Arab Emirates<br />Qatar
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-gray-400 text-m text-center justify-center mt-6">
+          © JustWatch 2025
+        </p>
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const now = new Date();
+            const day = now.getDate();
+            const month = now.toLocaleString("default", { month: "long" });
+    
+            document.getElementById("date1").textContent = day;
+            document.getElementById("month1").textContent = month;
+    
+            const netflixLogo = document.getElementById("netflix-logo");
+    
+            netflixLogo.addEventListener("mouseenter", () => {
+                // Code when mouse enters (hover begins)
+                netflixLogo.style.backgroundColor = "black";
+            });
+    
+            netflixLogo.addEventListener("mouseleave", () => {
+                // Code when mouse leaves (hover ends)
+                netflixLogo.style.backgroundColor = "transparent"; // or original color
+            });
+        });
+    </script>
+    
+
+</body>
+
+</html>

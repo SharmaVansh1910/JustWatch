@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JustWatch Sports</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      // Toggle menu visibility on mobile
+      function toggleMenu() {
+        const menu = document.getElementById("nav-links");
+        menu.classList.toggle("hidden");
+      }
+    </script>
+  </head>
+
+  <body
+    class="bg-black text-white font-sans"
+    style="
+      background-image: url('https://www.justwatch.com/appassets/img/sports/bg-all-sports-1920-v2.png');
+      background-size: cover;
+      background-position: center;
+    "
+  >
+    <!-- Navbar -->
+    <header class="bg-black sticky top-0 z-50 shadow-md">
+      <nav class="flex justify-between items-center p-4 lg:px-8">
+        <div class="flex items-center">
+          <img
+            src="https://www.justwatch.com/appassets/img/logo/JustWatch-logo-small.webp"
+            alt="JustWatch Logo"
+            class="w-28"
+            style="mix-blend-mode: screen"
+          />
+        </div>
+        <div
+          class="lg:flex hidden gap-6 text-sm md:text-base items-center"
+          id="nav-links"
+        >
+          <div class="hover:text-yellow-400 cursor-pointer">
+            <a href="index.html">Home</a>
+          </div>
+          <div class="hover:text-yellow-400 cursor-pointer">New</div>
+          <div class="hover:text-yellow-400 cursor-pointer">
+            <a href="popular.html">Popular</a>
+          </div>
+          <!-- <div class="hover:text-yellow-400 cursor-pointer">List</div> -->
+          <div class="text-yellow-400 cursor-pointer font-semibold">Sports</div>
+          <div class="hover:text-yellow-400 cursor-pointer">
+            <a href="guide.html">Guide</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <button
+            class="bg-gray-900 px-4 py-1 rounded-md hover:bg-yellow-400 hover:text-black transition"
+          >
+            <a href="sign-in.html">Sign In</a>
+          </button>
+          <button class="lg:hidden" onclick="toggleMenu()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 448 512"
+            >
+              <path
+                d="M0 96C0 78.3 14.3 64 32 64h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 
+              14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm448 
+              160c0 17.7-14.3 32-32 32H32c-17.7 
+              0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32z"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="px-6 lg:px-10 py-4">
+      <div class="relative w-full lg:w-1/2 mx-auto">
+        <input
+          type="text"
+          placeholder="Search for Movies or TV Shows"
+          class="w-full pl-10 pr-4 py-2 bg-gray-800 rounded-2xl text-white focus:outline-none"
+        />
+        <div
+          class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap gap-3 px-6 lg:px-10 py-3">
+      <button
+        class="bg-yellow-400 text-black px-4 py-2 rounded-full font-medium transition hover:bg-yellow-300"
+      >
+        All Sports
+      </button>
+      <button
+        class="bg-gray-800 px-4 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition"
+      >
+        Cricket
+      </button>
+      <button
+        class="bg-gray-800 px-4 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition"
+      >
+        Football
+      </button>
+      <button
+        class="bg-gray-800 px-4 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition"
+      >
+        Tennis
+      </button>
+      <button
+        class="bg-gray-800 px-4 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition"
+      >
+        MMA
+      </button>
+      <button
+        class="bg-gray-800 px-4 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition"
+      >
+        Wrestling
+      </button>
+    </div>
+
+    <!-- Live Events Section -->
+    <section class="px-6 lg:px-10 py-4">
+      <h2 class="text-xl font-semibold text-yellow-400 mb-4">Live Events</h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      >
+        <div
+          class="bg-red-600 rounded-lg p-4 shadow-lg flex items-center gap-4"
+        >
+          <span
+            class="animate-ping h-3 w-3 rounded-full bg-white opacity-75"
+          ></span>
+          <div>
+            <h3 class="text-white font-bold text-lg">India vs England</h3>
+            <p class="text-gray-300 text-sm">Cricket - 2nd Innings</p>
+          </div>
+        </div>
+        <div
+          class="bg-red-600 rounded-lg p-4 shadow-lg flex items-center gap-4"
+        >
+          <span
+            class="animate-ping h-3 w-3 rounded-full bg-white opacity-75"
+          ></span>
+          <div>
+            <h3 class="text-white font-bold text-lg">Barcelona vs Madrid</h3>
+            <p class="text-gray-300 text-sm">Football - 1st Half</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="px-6 lg:px-10 py-4">
+      <h2 class="text-xl font-semibold text-yellow-400 mb-4">
+        Upcoming Events
+      </h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      >
+        <div class="bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition">
+          <h3 class="text-white font-semibold text-lg mb-1">
+            IPL 2025: CSK vs MI
+          </h3>
+          <p class="text-gray-400 text-sm mb-1">Starts at 7:30 PM IST</p>
+          <p class="text-yellow-400 text-sm">Today</p>
+        </div>
+        <div class="bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition">
+          <h3 class="text-white font-semibold text-lg mb-1">
+            Wimbledon Semifinal
+          </h3>
+          <p class="text-gray-400 text-sm mb-1">Starts at 5:00 PM IST</p>
+          <p class="text-yellow-400 text-sm">Tomorrow</p>
+        </div>
+        <div class="bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition">
+          <h3 class="text-white font-semibold text-lg mb-1">UFC 300</h3>
+          <p class="text-gray-400 text-sm mb-1">Starts at 10:00 PM IST</p>
+          <p class="text-yellow-400 text-sm">12 April 2025</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Buttons -->
+    <section class="px-6 lg:px-10 py-6">
+      <h2 class="text-xl font-bold text-white mb-4">Filter by Sport</h2>
+      <div class="flex flex-wrap gap-4">
+        <button
+          class="bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded filter-btn"
+          data-sport="all"
+        >
+          All
+        </button>
+        <button
+          class="bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded filter-btn"
+          data-sport="cricket"
+        >
+          Cricket
+        </button>
+        <button
+          class="bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded filter-btn"
+          data-sport="football"
+        >
+          Football
+        </button>
+        <button
+          class="bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded filter-btn"
+          data-sport="tennis"
+        >
+          Tennis
+        </button>
+        <button
+          class="bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded filter-btn"
+          data-sport="ufc"
+        >
+          UFC
+        </button>
+      </div>
+    </section>
+
+    <!-- Live Events Section -->
+    <section class="px-6 lg:px-10 py-4">
+      <h2 class="text-xl font-semibold text-yellow-400 mb-4">Live Events</h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      >
+        <div
+          class="bg-red-600 rounded-lg p-4 shadow-lg flex items-center gap-4 sport-card"
+          data-sport="cricket"
+        >
+          <span
+            class="animate-ping h-3 w-3 rounded-full bg-white opacity-75"
+          ></span>
+          <div>
+            <h3 class="text-white font-bold text-lg">India vs England</h3>
+            <p class="text-gray-300 text-sm">Cricket - 2nd Innings</p>
+          </div>
+        </div>
+        <div
+          class="bg-red-600 rounded-lg p-4 shadow-lg flex items-center gap-4 sport-card"
+          data-sport="football"
+        >
+          <span
+            class="animate-ping h-3 w-3 rounded-full bg-white opacity-75"
+          ></span>
+          <div>
+            <h3 class="text-white font-bold text-lg">Barcelona vs Madrid</h3>
+            <p class="text-gray-300 text-sm">Football - 1st Half</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="px-6 lg:px-10 py-4">
+      <h2 class="text-xl font-semibold text-yellow-400 mb-4">
+        Upcoming Events
+      </h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      >
+        <div
+          class="bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition sport-card"
+          data-sport="cricket"
+        >
+          <h3 class="text-white font-semibold text-lg mb-1">
+            IPL 2025: CSK vs MI
+          </h3>
+          <p class="text-gray-400 text-sm mb-1">Starts at 7:30 PM IST</p>
+          <p class="text-yellow-400 text-sm">Today</p>
+        </div>
+        <div
+          class="bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition sport-card"
+          data-sport="tennis"
+        >
+          <h3 class="text-white font-semibold text-lg mb-1">
+            Wimbledon Semifinal
+          </h3>
+          <p class="text-gray-400 text-sm mb-1">Starts at 5:00 PM IST</p>
+          <p class="text-yellow-400 text-sm">Tomorrow</p>
+        </div>
+        <div
+          class="bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition sport-card"
+          data-sport="ufc"
+        >
+          <h3 class="text-white font-semibold text-lg mb-1">UFC 300</h3>
+          <p class="text-gray-400 text-sm mb-1">Starts at 10:00 PM IST</p>
+          <p class="text-yellow-400 text-sm">12 April 2025</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Script -->
+    <script>
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const cards = document.querySelectorAll(".sport-card");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const sport = button.getAttribute("data-sport");
+
+          cards.forEach((card) => {
+            const cardSport = card.getAttribute("data-sport");
+            if (sport === "all" || sport === cardSport) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- Sports Grid -->
+    <section
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-6 lg:px-10 py-6"
+    >
+      <div
+        class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transform transition cursor-pointer"
+      >
+        <img
+          src="https://media.crictracker.com/media/attachments/1735538748748_IND-vs-ENG.png"
+          class="w-full h-40 object-cover"
+        />
+        <div class="p-3 text-center">India vs England</div>
+      </div>
+      <div
+        class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transform transition cursor-pointer"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/1/18/2025_IPL_logo.png"
+          class="w-full h-40 object-cover"
+        />
+        <div class="p-3 text-center">IPL 2025</div>
+      </div>
+      <div
+        class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transform transition cursor-pointer"
+      >
+        <img
+          src="https://assets.turbologo.com/blog/en/2020/01/19084654/Premier-League-logo.png"
+          class="w-full h-40 object-cover"
+        />
+        <div class="p-3 text-center">Premier League</div>
+      </div>
+      <div
+        class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transform transition cursor-pointer"
+      >
+        <img
+          src="https://images.seeklogo.com/logo-png/14/1/uefa-champions-league-logo-png_seeklogo-144159.png"
+          class="w-full h-40 object-cover"
+        />
+        <div class="p-3 text-center">Champions League</div>
+      </div>
+      <div
+        class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transform transition cursor-pointer"
+      >
+        <img
+          src="https://www.logodesignlove.com/images/classic/nba-logo.jpg"
+          class="w-full h-40 object-cover"
+        />
+        <div class="p-3 text-center">NBA Finals</div>
+      </div>
+      <div
+        class="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transform transition cursor-pointer"
+      >
+        <img
+          src="https://preview.redd.it/unrivaled-greatness-is-the-tag-line-for-ufc-300-what-could-v0-w513h4c4ufcc1.jpeg?auto=webp&s=127ed7f5f8dfbe4ba8894c31b183f33a7a92e3c4"
+          class="w-full h-40 object-cover"
+        />
+        <div class="p-3 text-center">UFC 300</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-10 mt-6">
+      <h3 class="text-center text-lg font-semibold mb-6">
+        JustWatch is available in
+      </h3>
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center sm:text-left px-4"
+      >
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">
+            North America
+          </h4>
+          <p class="text-gray-400 text-sm">
+            Bermuda<br />Canada<br />Mexico<br />United States
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">
+            South America
+          </h4>
+          <p class="text-gray-400 text-sm">
+            Argentina<br />Brazil<br />Chile<br />Colombia<br />Ecuador
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">Europe</h4>
+          <p class="text-gray-400 text-sm">
+            France<br />Germany<br />Italy<br />Spain<br />United Kingdom
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">Asia</h4>
+          <p class="text-gray-400 text-sm">
+            India<br />Japan<br />Pakistan<br />Singapore<br />South Korea
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">Africa</h4>
+          <p class="text-gray-400 text-sm">
+            Algeria<br />Kenya<br />South Africa<br />Tunisia<br />Morocco
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">Pacific</h4>
+          <p class="text-gray-400 text-sm">
+            Australia<br />New Zealand<br />Fiji<br />Papua New Guinea
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-gray-200 mb-2">Middle East</h4>
+          <p class="text-gray-400 text-sm">
+            Egypt<br />Israel<br />Saudi Arabia<br />UAE<br />Qatar
+          </p>
+        </div>
+      </div>
+      <p class="text-gray-400 text-sm text-center mt-6">© JustWatch 2025</p>
+    </footer>
+  </body>
+</html>
